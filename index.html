@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Sostenibilità</title>
+    <script>
+        const quiz = [
+            {
+                domanda: "Dove va buttata (campione -> etichetta del sint-carta gialla)?",
+                risposte: ["Indifferenziata", "Carta", "Plastica"]
+            },
+            {
+                domanda: "I tre pilastri dello sviluppo sostenibile sono:",
+                risposte: ["La condivisione, la pace, la società", "Ambiente, clima, circolarità", "La società, l'economia, l'ambiente"]
+            },
+            {
+                domanda: "Quali sono le tre tipologie di etichette che possiamo trovare su un capo JOIN LIFE?",
+                risposte: ["Care for Fiber, Care for Planet, Car for People", "Care for Fiber, Care for Water, Care for Planet", "Care for Social, Care for Earth, Care for Materials"]
+            },
+            {
+                domanda: "Quale fibra tessile sintetica utilizza Zara che è ottenuta riciclando una bottiglia Pet?",
+                risposte: ["Poliestere riciclato", "Tenceltm Lyocell", "Modal"]
+            },
+            {
+                domanda: "Quale modello economico sta proponendo il Parlamento Europeo?",
+                risposte: ["Economia Lineare - Materie Prime > Produzione > Uso > Rifiuti non Riciclabili", "Economia Del Riuso - Materie Prime > Produzione > Riciclo > Uso Rifiuti non Riciclabili", "Economia Circolare - Materie Prime > Riciclo > Produzione > Uso"]
+            },
+            {
+                domanda: "Cos'è l'overshoot day?",
+                risposte: ["Definizione non fornita"]
+            },
+            {
+                domanda: "In cosa consiste la regola delle 5R?",
+                risposte: ["Definizione non fornita"]
+            },
+            {
+                domanda: "Cosa vuol dire essere sostenibili dal punto di vista ambientale?",
+                risposte: ["Definizione non fornita"]
+            },
+            {
+                domanda: "Qual è la differenza fra economia lineare e economia circolare?",
+                risposte: ["Definizione non fornita"]
+            },
+            {
+                domanda: "È meglio riciclare o riutilizzare?",
+                risposte: ["Definizione non fornita"]
+            },
+            {
+                domanda: "Cosa si intende per inquinamento digitale?",
+                risposte: ["L'accumulo di dispositivi elettronici dismessi nelle discariche", "L'insieme di danni causati dall'utilizzo di tecnologie digitali", "L'uso eccessivo di Wi-Fi"]
+            },
+            {
+                domanda: "Come possiamo fare per consumare in modo responsabile?",
+                risposte: ["Rinnovare l'intero guardaroba ogni cambio di stagione", "Riparare dispositivi che non funzionano più", "Gettare via tutti gli oggetti non più in uso nella spazzatura"]
+            },
+            {
+                domanda: "Come si può variare le proprie abitudini alimentari per essere più sostenibili?",
+                risposte: ["Aumentando il consumo di carne e pesce per il fabbisogno giornaliero di proteine", "Comprare grandi quantità nei GDO per riempire la dispensa", "Prediligere prodotti locali biologici prevalentemente vegetali e di stagione"]
+            }
+        ];
+
+        function mostraDomandaCasuale() {
+            const indiceCasuale = Math.floor(Math.random() * quiz.length);
+            const domandaSelezionata = quiz[indiceCasuale];
+
+            document.getElementById("domanda").innerText = domandaSelezionata.domanda;
+
+            // Mescola le risposte in modo casuale
+            const risposteMescolate = domandaSelezionata.risposte.sort(() => 0.5 - Math.random());
+
+            // Mostra le risposte mescolate
+            for (let i = 0; i < risposteMescolate.length; i++) {
+                const btn = document.getElementById(`risposta${i + 1}`);
+                btn.innerText = risposteMescolate[i];
+            }
+        }
+
+        window.onload = mostraDomandaCasuale;
+    </script>
+</head>
+<body>
+    <h1>Quiz sulla Sostenibilità</h1>
+    <p id="domanda">Caricamento...</p>
+    <ul>
+        <li><button id="risposta1">Opzione 1</button></li>
+        <li><button id="risposta2">Opzione 2</button></li>
+        <li><button id="risposta3">Opzione 3</button></li>
+    </ul>
+</body>
+</html>
